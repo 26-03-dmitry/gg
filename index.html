@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Моя PWA</title>
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <h1>Привет, GitHub Pages!</h1>
+  <p>Это тестовый сайт.</p>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
