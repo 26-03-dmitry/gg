@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Моя PWA</title>
   <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="icon.png">
+  <title>PWA Тест</title>
 </head>
 <body>
-  <h1>Привет, GitHub Pages!</h1>
-  <p>Это тестовый сайт.</p>
-
+  <h1>Образовательная игра</h1>
+  <h2>Вопрос: Столица Франции?</h2>
+  <button onclick="checkAnswer('Париж')">Париж</button>
+  <button onclick="checkAnswer('Берлин')">Берлин</button>
   <script>
+    function checkAnswer(answer) {
+      if (answer === 'Париж') {
+        alert('Верно!');
+      } else {
+        alert('Неверно');
+      }
+    }
+
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker зарегистрирован.'));
     }
   </script>
 </body>
