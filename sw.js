@@ -1,7 +1,14 @@
+const CACHE_NAME = 'pwa-cache-v2';
+
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open('pwa-cache').then(cache => {
-      return cache.addAll(['index.html', 'manifest.json', 'icon.png']);
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll([
+        'index.html',
+        'manifest.json',
+        'icon.png',
+        'style.css' // если ты его добавил
+      ]);
     })
   );
 });
